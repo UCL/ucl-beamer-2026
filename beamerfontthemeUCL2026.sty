@@ -1,0 +1,92 @@
+\mode<presentation>
+
+\NeedsTeXFormat{LaTeX2e}
+
+\ProvidesPackage{beamerfontthemeUCL2026}[2026/02/19 v0.1 UCL2026]
+
+% Loads correct fonts for presentations
+% First checks for pdflatex and issues an error
+% In order checks and loads the main font: UCL Sans, Aptos
+% Checks and loads the math font: Fira Math, issues a warning if not installed
+
+
+\RequirePackage{iftex}
+
+\ifPDFTeX
+	\PackageError{beamerfontthemeUCL2026}{%
+		This theme requires XeLaTeX or LuaLaTeX.%
+		You are using pdfLaTeX. Please compile with one of these engines}{%
+		Use: xelatex yourfile.tex or lualatex yourfile.tex}
+\fi
+
+\RequirePackage{fontspec}
+\RequirePackage{unicode-math}
+
+\ProcessOptionsBeamer
+
+% Set main font
+\IfFontExistsTF{UCL Sans}{%
+	\setsansfont{UCL Sans}[
+			Scale = 1.0,
+			UprightFont    = * ,
+			BoldFont       = * Bold,
+			ItalicFont     = * Italic,
+			BoldItalicFont = * Bold Italic
+	]
+	}{
+		\IfFontExistsTF{Aptos}{%
+			\setsansfont{Aptos}[
+					Scale = 1.0,
+					UprightFont    = * ,
+					BoldFont       = * Bold,
+					ItalicFont     = * Italic,
+					BoldItalicFont = * Bold Italic
+			]
+		}{%
+			\PackageError{beamerfontthemeUCL2026}{%
+				This theme requires either UCL Sans or Aptos fonts to be installed
+			}{Install either UCL Sans or Aptos fonts and recompile the file}
+		}
+	}
+
+% Set math font
+% TODO: there is no specified paired math font so will need to experiment
+\IfFontExistsTF{Fira Math}{%
+	\setmathfont{Fira Math}[math-style=ISO, 
+							bold-style=ISO,
+							Scale=MatchLowercase]
+	}{
+	% Defaults to the default math font
+	\PackageWarning{beamerfontthemeUCL2026}{%
+		Font not found: Fira Math - this is not required but pairs better with the main fonts
+	}
+	}
+
+
+% Title page fonts 
+\setbeamerfont{title}{size=\LARGE,series=\bfseries}
+\setbeamerfont{subtitle}{size=\large,series=\normalfont}
+\setbeamerfont{author}{size=\normalsize ,series=\normalfont}
+\setbeamerfont{institute}{size=\small,series=\normalfont}
+\setbeamerfont{date}{size=\small,series=\normalfont}
+
+% Frame title fonts
+\setbeamerfont{frametitle}{size=\Large,series=\bfseries} 
+\setbeamerfont{framesubtitle}{size=\large,series=\normalfont}
+
+% Block fonts
+\setbeamerfont{block title}{size=\normalsize ,series=\bfseries}
+\setbeamerfont{block body}{size=\small,series=\normalfont}
+
+% Item fonts
+\setbeamerfont{itemize/enumerate body}{size=\normalsize}
+\setbeamerfont{itemize/enumerate subbody}{size=\small}
+
+% Caption fonts 
+\setbeamerfont{caption}{size=\small,series=\normalfont}
+\setbeamerfont{caption name}{series=\bfseries}
+
+% Footnote fonts
+\setbeamerfont{footnote}{size=\tiny}
+
+\mode<all>
