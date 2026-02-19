@@ -1,0 +1,49 @@
+\ProvidesPackage{ucl2026colors}
+\RequirePackage{xcolor}
+
+% All UCL colours are defined in terms of cmyk
+\selectcolormodel{cmyk}
+
+% Define UCL colours (in addition to black and white)
+%% dark colours: use white text
+%% headlines: use dark purple text
+
+%%%% Using CMYK by default, but putting in the RGB defs too just in case we need them
+%%%% I didn't want to have to look them up again
+%%%% We *could* also put the Pantone defs here if someone ever needs them, using xspotcolor/xespotcolor
+%%%% Current URL: https://www.ucl.ac.uk/brand-and-experience/brand/visual-guidelines/colour
+
+%% "Lead" Colours
+
+\definecolor{darkpurple}{CMYK}{80,100,0,50}
+\definecolor{brightpurple}{CMYK}{50,61,0,0}
+\definecolor{midpurple}{CMYK}{35,42,0,0}
+
+\definecolor{darkpurplergb}{RGB}{54,26,94}
+\definecolor{brightpurplergb}{RGB}{153,59,255}
+\definecolor{midpurplergb}{RGB}{186,130,255}
+
+\definecolor{offwhite}{RGB}{250,250,250} %% "For screen use only"
+
+%% Supporting Colours
+
+\definecolor{lightpurple}{CMYK}{10,15,0,0}
+\definecolor{palepurple}{CMYK}{4,7,0,0}
+\definecolor{heritageblue}{CMYK}{55,0,5,0}
+
+\definecolor{lightpurplergb}{RGB}{221,189,255}
+\definecolor{palepurplergb}{RGB}{48,214,255}
+\definecolor{heritagebluergb}{RGB}{48,214,255}
+
+
+%% Chart & Graph Colours
+%%%% These are defined in the PPTX presentation template
+\definecolor{darkblue}{RGB}{0,46,166}
+\definecolor{darkorange}{RGB}{120,28,28}
+\definecolor{darkfuchsia}{RGB}{158,26,84}
+\definecolor{darktealgreen}{RGB}{0,94,92}
+\definecolor{blue}{RGB}{84,135,255}
+\definecolor{orange}{RGB}{245,99,0}
+\definecolor{fuchsia}{RGB}{237,54,125}
+\definecolor{tealgreen}{RGB}{0,158,156}
+
