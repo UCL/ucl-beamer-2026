@@ -28,8 +28,8 @@
 \IfFontExistsTF{UCL Sans}{%
 	\setsansfont{UCL Sans}[
 			Scale = 1.0,
-			UprightFont    = * ,
-			BoldFont       = * Bold,
+			UprightFont    = * Regular,
+			BoldFont       = * SemiBold,
 			ItalicFont     = * Italic,
 			BoldItalicFont = * Bold Italic
 	]
@@ -37,8 +37,8 @@
 		\IfFontExistsTF{Aptos}{%
 			\setsansfont{Aptos}[
 					Scale = 1.0,
-					UprightFont    = * ,
-					BoldFont       = * Bold,
+					UprightFont    = * Regular,
+					BoldFont       = * SemiBold,
 					ItalicFont     = * Italic,
 					BoldItalicFont = * Bold Italic
 			]
@@ -50,7 +50,7 @@
 	}
 
 % Set math font
-% TODO: there is no specified paired math font so will need to experiment
+% TODO: there is no specified paired math font so will need to experiment - using Fira Math for now
 \IfFontExistsTF{Fira Math}{%
 	\setmathfont{Fira Math}[math-style=ISO, 
 							bold-style=ISO,
@@ -62,16 +62,27 @@
 	}
 	}
 
+\renewcommand{\normalsize}{\fontsize{23}{27}\selectfont}
+\renewcommand{\small}{\fontsize{19}{23}\selectfont}
+\renewcommand{\footnotesize}{\fontsize{16}{19}\selectfont}
+\renewcommand{\tiny}{\fontsize{12}{14}\selectfont}
+\renewcommand{\large}{\fontsize{27}{32}\selectfont}
+\renewcommand{\Large}{\fontsize{32}{38}\selectfont}
+\renewcommand{\LARGE}{\fontsize{38}{45}\selectfont}
+\renewcommand{\huge}{\fontsize{46}{54}\selectfont}
+\renewcommand{\Huge}{\fontsize{54}{64}\selectfont}
+
+\normalsize % apply it
 
 % Title page fonts 
-\setbeamerfont{title}{size=\LARGE,series=\bfseries}
-\setbeamerfont{subtitle}{size=\large,series=\normalfont}
-\setbeamerfont{author}{size=\normalsize ,series=\normalfont}
+\setbeamerfont{title}{size=\fontsize{42}{44}\selectfont,series=\bfseries}
+\setbeamerfont{subtitle}{size=\fontsize{24}{26}\selectfont,series=\normalfont}
+\setbeamerfont{author}{size=\fontsize{24}{26}\selectfont ,series=\normalfont}
 \setbeamerfont{institute}{size=\small,series=\normalfont}
-\setbeamerfont{date}{size=\small,series=\normalfont}
+\setbeamerfont{date}{size=\fontsize{18}{20}\selectfont,series=\normalfont}
 
 % Frame title fonts
-\setbeamerfont{frametitle}{size=\Large,series=\bfseries} 
+\setbeamerfont{frametitle}{size=\fontsize{36}{38.4}\selectfont, series=\bfseries}
 \setbeamerfont{framesubtitle}{size=\large,series=\normalfont}
 
 % Block fonts

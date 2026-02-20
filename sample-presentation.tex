@@ -1,0 +1,44 @@
+\documentclass[aspectratio=169]{beamer}
+
+\usetheme{UCL2026}
+
+\title{Main Headline style slide\\UCL Sans SemiBold 42pt\\2-3 lines max}
+\author{Presenter names}
+\institute{University College London}
+\date{Date}
+
+\begin{document}
+
+\maketitle
+
+\begin{frame}{Headline\\UCL Sans SemiBold 36pt}
+
+    \begin{itemize}
+        \item This is a bullet point
+        \item This is a some \alert{mathematics},
+        \[ f(\zeta) = \oint_\Gamma \frac{f(z)}{z-\zeta} \;\text{d}z\]
+        \begin{itemize}
+            \item A sublist
+            \begin{itemize}
+                \item And another one
+            \end{itemize}
+        \end{itemize}
+    \end{itemize}
+
+\end{frame}
+
+\begin{frame}
+
+    \begin{enumerate}
+        \item An enumerated list of items
+        \begin{enumerate}
+            \item A sub list item
+            \begin{enumerate}
+                \item And another
+            \end{enumerate}
+        \end{enumerate}
+    \end{enumerate}
+
+\end{frame}
+
+\end{document}
