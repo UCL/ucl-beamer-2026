@@ -8,4 +8,46 @@
 \logo{%
 \includegraphics[height = 1.2cm]{logo/UCLPageLogo.png}}
 
+% Bar dimensions 
+\newlength{\stripewidth}
+\setlength{\stripewidth}{1.125cm}
+
+\newlength{\textmarginlength}
+\setlength{\textmarginlength}{3cm}
+
+% left margin = text margin + stripe width
+\newlength{\lefttextmargin}
+\setlength{\lefttextmargin}{\textmarginlength}
+\addtolength{\lefttextmargin}{\stripewidth}
+
+\setbeamersize{text margin left=\lefttextmargin, text margin right=\textmarginlength}
+
+\setbeamertemplate{background}{%
+  \begin{tikzpicture}[remember picture, overlay]
+    \fill[brightpurple]
+      (current page.north west)
+      rectangle
+      ([xshift=\stripewidth] current page.south west);
+  \end{tikzpicture}%
+}
+
+\defbeamertemplate*{frametitle}{stripe}{%
+  \nointerlineskip
+  \begin{beamercolorbox}[wd=\paperwidth, ht=4cm, dp=2cm,
+                         leftskip=\lefttextmargin, rightskip=\textmarginlength]{frametitle}
+    \begin{tikzpicture}[remember picture, overlay]
+    \fill[brightpurple]
+      (current page.north west)
+      rectangle
+      ([xshift=\stripewidth] current page.south west);
+    \end{tikzpicture}%
+    \usebeamerfont{frametitle}\insertframetitle
+    \ifx\insertframesubtitle\@empty\else
+      \par
+      \usebeamerfont{framesubtitle}%
+      \usebeamercolor[fg]{framesubtitle}%
+      \insertframesubtitle
+    \fi
+  \end{beamercolorbox}%
+}
 \mode<all>
