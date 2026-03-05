@@ -24,5 +24,15 @@
     \end{tikzpicture}
 }
 
+% ===============
+%      Lists
+% ===============
+\setbeamertemplate{itemize item}{\tikz[baseline=-0.4ex]\draw[fill,color=.] (0,0) rectangle (0.4ex, 0.4ex);}
+\setbeamertemplate{itemize subitem}{\tikz[baseline=-0.4ex]\draw[fill,color=.] (0,0) rectangle (0.3ex, 0.3ex);}
+\setbeamertemplate{itemize subsubitem}{\tikz[baseline=-0.4ex]\draw[fill,color=.] (0,0) rectangle (0.3ex, 0.3ex);}
+
+\setbeamertemplate{enumerate subitem}{\alph{enumii}.}
+\setbeamertemplate{enumerate subsubitem}{\roman{enumii}.}
+
 
 \mode<all>

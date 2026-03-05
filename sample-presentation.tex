@@ -3,7 +3,7 @@
 \usetheme{UCL2026}
 
 \title{Main Headline style slide\\UCL Sans SemiBold 42pt\\2-3 lines max}
-\author{Presenter names}
+\author{Names of Presenters}
 \institute{University College London}
 \date{Date}
 
@@ -39,6 +39,28 @@
         \end{enumerate}
     \end{enumerate}
 
+\end{frame}
+
+\begin{frame}[t]{System colours for visualising data}
+    \begin{tikzpicture}
+
+        \fill [palepurple] (-1,-1) rectangle (26.25,5);
+
+        \node at (-0.25,3.75) [right] {\textbf{Only use the following colours in graphs and charts}};
+
+        \foreach \i/\colour in {0/darkblue,
+                                1/darkorange, 
+                                2/darkfuchsia, 
+                                3/darktealgreen,
+                                4/blue,
+                                5/orange,
+                                6/fuchsia,
+                                7/tealgreen} {
+            \fill [\colour] ({3.25 * \i}, 0) --++ (2.5,0) --++ (0,2.5) --++ (-2.5,0) -- cycle;
+            \node at ({3.25 * \i - 0.25},0) [below right] {\tiny\texttt{\colour}};
+        }
+    \end{tikzpicture}
+    System colours are already coded as part of this template, you may use the colour names given above.
 \end{frame}
 
 \end{document}
