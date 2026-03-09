@@ -16,10 +16,17 @@
         \fill [brightpurple] (current page.south west) --++ (3.76cm,0) --++ (0,\pageheight) --++ (-3.76cm,0) -- cycle;
 
         \draw (current page.north west) ++ (6.4cm, -1.1cm) node [below right] {\begin{minipage}{.75\pagewidth}\usebeamerfont{title}\color{white}\inserttitle\end{minipage}};
-        \draw (current page.south west) ++ (6.3cm, 6.6cm) node (author node) [below right] {\usebeamerfont{author}\color{white}\insertauthor};
-        \draw (current page.south west) ++ (6.3cm, 5.2cm) node [below right] {\usebeamerfont{date}\color{white}\insertdate};
 
-        \draw (current page.south east) ++ (-9,.5) node [above right] {\includegraphics[width = 7.9cm]{logo/ucl-logo--primary-inverted.pdf}};
+        \ifx\insertinstitute\@empty
+            \draw (current page.south west) ++ (6.3cm, 6.6cm) node [below right] {\usebeamerfont{author}\color{white}\insertauthor};
+            \draw (current page.south west) ++ (6.3cm, 5.5cm) node [below right] {\usebeamerfont{date}\color{white}\insertdate};
+        \else
+            \draw (current page.south west) ++ (6.3cm, 9cm) node [below right] {\usebeamerfont{author}\color{white}\insertauthor};
+            \draw (current page.south west) ++ (6.3cm, 7.9cm) node [below right] {\usebeamerfont{date}\color{white}\insertdate};
+            \draw (current page.south west) ++ (6.3cm, 2.5cm) node [below right] {\usebeamerfont{institute}\color{white}\insertinstitute};
+        \fi
+
+        \draw (current page.south east) ++ (-9,.75) node [above right] {\includegraphics[width = 7.9cm]{logo/ucl-logo--primary-inverted.pdf}};
 
     \end{tikzpicture}
 }
