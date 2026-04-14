@@ -13,9 +13,9 @@
 \defbeamertemplate*{title page}{UCL2026}{
     \begin{tikzpicture}[remember picture, overlay]
         \fill [darkpurple] (current page.south west) rectangle (current page.north east);
-        \fill [brightpurple] (current page.south west) --++ (3.76cm,0) --++ (0,\pageheight) --++ (-3.76cm,0) -- cycle;
+        \fill [brightpurple] (current page.south west) --++ (3.76cm,0) --++ (0,\paperheight) --++ (-3.76cm,0) -- cycle;
 
-        \draw (current page.north west) ++ (6.4cm, -1.1cm) node [below right] {\begin{minipage}{.75\pagewidth}\usebeamerfont{title}\color{white}\inserttitle\end{minipage}};
+        \draw (current page.north west) ++ (6.4cm, -1.1cm) node [below right] {\begin{minipage}{.75\paperwidth}\usebeamerfont{title}\color{white}\inserttitle\end{minipage}};
 
         \ifx\insertinstitute\@empty
             \draw (current page.south west) ++ (6.3cm, 6.6cm) node [below right] {\usebeamerfont{author}\color{white}\insertauthor};
