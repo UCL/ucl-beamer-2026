@@ -8,29 +8,27 @@
 \logo{%
   \includegraphics[height = 1.2cm]{logo/ucl-logo--primary.pdf}\hspace{1cm}}
 
-% Bar dimensions 
+% Bar dimensions
 \newlength{\stripewidth}
 \setlength{\stripewidth}{1cm}
 
 \newlength{\textmarginlength}
 \setlength{\textmarginlength}{3cm}
 
+% Draw a purple sidebar on the left of every frame
+\setbeamersize{sidebar width left=\stripewidth, text margin left=\textmarginlength, text margin right=\textmarginlength}
+
+\setbeamertemplate{sidebar left}{%
+  \color{brightpurple}\vrule width \stripewidth height \paperheight%
+}
+
+
 % left margin = text margin + stripe width
 \newlength{\lefttextmargin}
 \setlength{\lefttextmargin}{\textmarginlength}
 \addtolength{\lefttextmargin}{\stripewidth}
 
-\setbeamersize{text margin left=\lefttextmargin, text margin right=\textmarginlength}
-
-\setbeamertemplate{background}{%
-  \begin{tikzpicture}[remember picture, overlay]
-    \fill[brightpurple]
-      (current page.north west)
-      rectangle
-      ([xshift=\stripewidth] current page.south west);
-  \end{tikzpicture}%
-}
-
+% Title page with optional institution placement
 \defbeamertemplate*{frametitle}{stripe}{%
   \nointerlineskip
   \begin{beamercolorbox}[wd=\paperwidth, ht=4cm, dp=2cm,
@@ -50,4 +48,5 @@
     \fi
   \end{beamercolorbox}%
 }
+
 \mode<all>
